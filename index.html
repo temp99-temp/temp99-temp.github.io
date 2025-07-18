@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToolStack</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-gray-800">
+  <header class="bg-indigo-600 text-white p-6 shadow-lg">
+    <h1 class="text-3xl font-bold">ToolStack</h1>
+    <p>Smart tools, calculators, and fun resources!</p>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    
+  <!-- 🔢 Calculator-Based Websites -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-4">🔢 Calculator-Based Websites</h2>
+    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <li><a href="#bmi" class="nav-link block p-4 bg-white shadow rounded-xl">BMI Calculator</a></li>
+      <li><a href="#age" class="nav-link block p-4 bg-white shadow rounded-xl">Age Calculator</a></li>
+      <li><a href="#loan" class="nav-link block p-4 bg-white shadow rounded-xl">Loan / EMI Calculator</a></li>
+      <li><a href="#pregnancy" class="nav-link block p-4 bg-white shadow rounded-xl">Pregnancy Due Date</a></li>
+      <li><a href="#calorie" class="nav-link block p-4 bg-white shadow rounded-xl">Calorie / BMR Calculator</a></li>
+      <li><a href="#love" class="nav-link block p-4 bg-white shadow rounded-xl">Love Compatibility</a></li>
+      <li><a href="#percentage" class="nav-link block p-4 bg-white shadow rounded-xl">Percentage Calculator</a></li>
+      <li><a href="#tax" class="nav-link block p-4 bg-white shadow rounded-xl">Tax Calculator</a></li>
+      <li><a href="#currency" class="nav-link block p-4 bg-white shadow rounded-xl">Currency Converter</a></li>
+      <li><a href="#timezone" class="nav-link block p-4 bg-white shadow rounded-xl">Time Zone Converter</a></li>
+    </ul>
+  </section>
+
+  <!-- 📅 Utility & Tool Websites -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-4">📅 Utility & Tool Websites</h2>
+    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <li><a href="#unit-converter" class="nav-link block p-4 bg-white shadow rounded-xl">Unit Converter</a></li>
+      <li><a href="#word-counter" class="nav-link block p-4 bg-white shadow rounded-xl">Word / Character Counter</a></li>
+      <li><a href="#text-case" class="nav-link block p-4 bg-white shadow rounded-xl">Text Case Converter</a></li>
+      <li><a href="#qrcode" class="nav-link block p-4 bg-white shadow rounded-xl">QR Code Generator</a></li>
+      <li><a href="#base64" class="nav-link block p-4 bg-white shadow rounded-xl">Base64 Encoder / Decoder</a></li>
+      <li><a href="#password-generator" class="nav-link block p-4 bg-white shadow rounded-xl">Password Generator</a></li>
+      <li><a href="#random-number" class="nav-link block p-4 bg-white shadow rounded-xl">Random Number Generator</a></li>
+      <li><a href="#age-in-days" class="nav-link block p-4 bg-white shadow rounded-xl">Age in Days / Months</a></li>
+      <li><a href="#tip-calculator" class="nav-link block p-4 bg-white shadow rounded-xl">Tip Calculator</a></li>
+      <li><a href="#date-diff" class="nav-link block p-4 bg-white shadow rounded-xl">Date Difference Calculator</a></li>
+  </section>
+
+    <!-- Tool Sections -->
+    <section id="bmi" class="tool-section bg-white p-6 rounded shadow mb-8">
+      <h2 class="text-xl font-bold mb-2">BMI Calculator</h2>
+      <input id="bmi-weight" type="number" placeholder="Weight (kg)" class="border p-2 mr-2" />
+      <input id="bmi-height" type="number" placeholder="Height (cm)" class="border p-2 mr-2" />
+      <button onclick="calcBMI()" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate</button>
+      <p id="bmi-result" class="mt-3 font-semibold"></p>
+    </section>
+
+    <section id="age" class="tool-section bg-white p-6 rounded shadow mb-8">
+      <h2 class="text-xl font-bold mb-2">Age Calculator</h2>
+      <input id="dob" type="date" class="border p-2 mr-2" />
+      <button onclick="calcAge()" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate Age</button>
+      <p id="age-result" class="mt-3 font-semibold"></p>
+    </section>
+
+    <section id="loan" class="tool-section bg-white p-6 rounded shadow mb-8">
+      <h2 class="text-xl font-bold mb-2">Loan / EMI Calculator</h2>
+      <input id="loan-amount" type="number" placeholder="Loan Amount" class="border p-2 mr-2" />
+      <input id="loan-interest" type="number" placeholder="Interest Rate (%)" class="border p-2 mr-2" />
+      <input id="loan-term" type="number" placeholder="Term (years)" class="border p-2 mr-2" />
+      <button onclick="calcEMI()" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate EMI</button>
+      <p id="emi-result" class="mt-3 font-semibold"></p>
+    </section>
+
+    <section id="pregnancy" class="tool-section bg-white p-6 rounded shadow mb-8">
+      <h2 class="text-xl font-bold mb-2">Pregnancy Due Date Calculator</h2>
+      <input id="lmp" type="date" class="border p-2 mr-2" />
+      <button onclick="calcDueDate()" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate</button>
+      <p id="due-date-result" class="mt-3 font-semibold"></p>
+    </section>
+
+    <section id="calorie" class="tool-section bg-white p-6 rounded shadow mb-8">
+      <h2 class="text-xl font-bold mb-2">Calorie / BMR Calculator</h2>
+      <input id="cal-weight" type="number" placeholder="Weight (kg)" class="border p-2 mr-2" />
+      <input id="cal-height" type="number" placeholder="Height (cm)" class="border p-2 mr-2" />
+      <input id="cal-age" type="number" placeholder="Age" class="border p-2 mr-2" />
+      <select id="cal-gender" class="border p-2 mr-2">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <button onclick="calcBMR()" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate BMR</button>
+      <p id="bmr-result" class="mt-3 font-semibold"></p>
+    </section>
+
+    <section id="love" class="tool-section mt-12 bg-white p-6 rounded-xl shadow">
+        <h2 class="text-xl font-bold mb-4">💘 Love Compatibility Calculator</h2>
+        <form id="loveForm">
+          <label class="block mb-2">Your Name:</label>
+          <input type="text" id="yourName" class="w-full border px-3 py-2 rounded mb-4" required>
+      
+          <label class="block mb-2">Partner's Name:</label>
+          <input type="text" id="partnerName" class="w-full border px-3 py-2 rounded mb-4" required>
+      
+          <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded">Calculate</button>
+        </form>
+      
+        <div id="loveResult" class="mt-4 font-semibold text-lg"></div>
+      
+        <p class="text-xs text-gray-500 mt-6 italic">
+          ⚠️ This tool is for entertainment purposes only. It is not based on scientific or psychological evidence.
+        </p>
+      </section>
+
+    <section id="percentage" class="tool-section bg-white p-6 rounded shadow mb-8">
+      <h2 class="text-xl font-bold mb-2">Percentage Calculator</h2>
+      <input id="percent-part" type="number" placeholder="Part" class="border p-2 mr-2" />
+      <input id="percent-total" type="number" placeholder="Total" class="border p-2 mr-2" />
+      <button onclick="calcPercent()" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate</button>
+      <p id="percent-result" class="mt-3 font-semibold"></p>
+    </section>
+
+<!-- Tax Calculator -->
+<section id="tax" class="tool-section bg-white p-6 rounded shadow mb-8">
+  <h2 class="text-xl font-bold mb-2">Tax Calculator</h2>
+  <input id="income" type="number" placeholder="Annual Income" class="border p-2 mr-2" />
+  <input id="tax-rate" type="number" placeholder="Tax Rate (%)" class="border p-2 mr-2" />
+  <button onclick="calcTax()" class="bg-green-500 text-white px-4 py-2 rounded">Calculate Tax</button>
+  <p id="tax-result" class="mt-3 font-semibold"></p>
+</section>
+
+<section id="currency" class="tool-section bg-white p-6 rounded shadow mb-8">
+  <h2 class="text-xl font-bold mb-2">Currency Converter</h2>
+
+  <input id="amount" type="number" placeholder="Amount" class="border p-2 mr-2 mb-2" />
+  <input id="from-currency" type="text" placeholder="From (e.g., USD)" class="border p-2 mr-2 mb-2" />
+  <input id="to-currency" type="text" placeholder="To (e.g., INR)" class="border p-2 mr-2 mb-2" />
+
+  <button onclick="convertCurrency()" class="bg-blue-500 text-white px-4 py-2 rounded">Convert</button>
+
+  <p id="currency-result" class="mt-4 font-semibold"></p>
+</section>
+
+
+<!-- Time Zone Converter -->
+<section id="timezone" class="tool-section bg-white p-6 rounded shadow mb-8">
+  <h2 class="text-xl font-bold mb-2">Time Zone Converter</h2>
+  <input id="base-time" type="time" class="border p-2 mr-2" />
+  <select id="from-zone" class="border p-2 mr-2">
+    <option value="UTC">UTC</option>
+    <option value="America/New_York">New York</option>
+    <option value="Europe/London">London</option>
+    <option value="Asia/Kolkata">India</option>
+    <option value="Asia/Tokyo">Tokyo</option>
+  </select>
+  <select id="to-zone" class="border p-2 mr-2">
+    <option value="Asia/Kolkata">India</option>
+    <option value="UTC">UTC</option>
+    <option value="America/New_York">New York</option>
+    <option value="Europe/London">London</option>
+    <option value="Asia/Tokyo">Tokyo</option>
+  </select>
+  <button onclick="convertTimeZone()" class="bg-yellow-500 text-white px-4 py-2 rounded">Convert Time</button>
+  <p id="timezone-result" class="mt-3 font-semibold"></p>
+</section>
+
+  <!-- 📅 Utility Tools -->
+
+  <!-- Unit Converter -->
+  <section id="unit-converter" class="tool-section bg-white p-6 rounded shadow mb-8">
+    <h2 class="text-xl font-bold mb-2">Unit Converter</h2>
+    <select id="unit-type" class="border p-2 mr-2">
+      <option value="length">Length</option>
+      <option value="weight">Weight</option>
+      <option value="temperature">Temperature</option>
+    </select>
+    <input id="unit-value" type="number" placeholder="Value" class="border p-2 mr-2" />
+    <select id="unit-from" class="border p-2 mr-2"></select>
+    <select id="unit-to" class="border p-2 mr-2"></select>
+    <button onclick="convertUnit()" class="bg-blue-500 text-white px-4 py-2 rounded">Convert</button>
+    <p id="unit-result" class="mt-3 font-semibold"></p>
+  </section>
+
+  <!-- Word / Character Counter -->
+  <section id="word-counter" class="tool-section bg-white p-6 rounded shadow mb-8">
+    <h2 class="text-xl font-bold mb-2">Word / Character Counter</h2>
+    <textarea id="word-input" class="w-full border p-2 mb-2" rows="4" placeholder="Type or paste text..."></textarea>
+    <button onclick="countWords()" class="bg-blue-500 text-white px-4 py-2 rounded">Count</button>
+    <p id="word-result" class="mt-3 font-semibold"></p>
+  </section>
+
+  <!-- Text Case Converter -->
+  <section id="text-case" class="tool-section bg-white p-6 rounded shadow mb-8">
+    <h2 class="text-xl font-bold mb-2">Text Case Converter</h2>
+    <textarea id="case-input" class="w-full border p-2 mb-2" rows="4"></textarea>
+    <div class="space-x-2 mb-2">
+      <button onclick="convertCase('upper')" class="bg-gray-600 text-white px-2 py-1 rounded">UPPER</button>
+      <button onclick="convertCase('lower')" class="bg-gray-600 text-white px-2 py-1 rounded">lower</button>
+      <button onclick="convertCase('title')" class="bg-gray-600 text-white px-2 py-1 rounded">Title Case</button>
+    </div>
+    <p id="case-result" class="mt-3 font-semibold break-words"></p>
+  </section>
+
+ <!-- QR Code Generator -->
+<section id="qrcode" class="tool-section hidden bg-white p-6 rounded shadow mb-8">
+  <h2 class="text-xl font-bold mb-2">QR Code Generator</h2>
+  <input id="qr-input" type="text" class="border p-2 mr-2 w-full md:w-1/2" placeholder="Enter text or URL" />
+  <button onclick="generateQR()" class="bg-blue-500 text-white px-4 py-2 rounded mt-2">Generate</button>
+  <div id="qr-code" class="mt-4"></div>
+</section>
+
+  <!-- Base64 Encoder / Decoder -->
+  <section id="base64" class="tool-section bg-white p-6 rounded shadow mb-8">
+    <h2 class="text-xl font-bold mb-2">Base64 Encoder / Decoder</h2>
+    <textarea id="base64-input" class="w-full border p-2 mb-2" rows="3"></textarea>
+    <div class="space-x-2">
+      <button onclick="encodeBase64()" class="bg-blue-500 text-white px-4 py-1 rounded">Encode</button>
+      <button onclick="decodeBase64()" class="bg-green-500 text-white px-4 py-1 rounded">Decode</button>
+    </div>
+    <p id="base64-result" class="mt-3 font-semibold break-words"></p>
+  </section>
+
+  <!-- Password Generator -->
+  <section id="password-generator" class="tool-section bg-white p-6 rounded shadow mb-8">
+    <h2 class="text-xl font-bold mb-2">Password Generator</h2>
+    <input id="password-length" type="number" placeholder="Length" class="border p-2 mr-2" />
+    <button onclick="generatePassword()" class="bg-blue-500 text-white px-4 py-2 rounded">Generate</button>
+    <p id="password-result" class="mt-3 font-semibold break-words"></p>
+  </section>
+
+  <!-- Random Number Generator -->
+  <section id="random-number" class="tool-section bg-white p-6 rounded shadow mb-8">
+    <h2 class="text-xl font-bold mb-2">Random Number Generator</h2>
+    <input id="rand-min" type="number" placeholder="Min" class="border p-2 mr-2" />
+    <input id="rand-max" type="number" placeholder="Max" class="border p-2 mr-2" />
+    <button onclick="generateRandom()" class="bg-blue-500 text-white px-4 py-2 rounded">Generate</button>
+    <p id="random-result" class="mt-3 font-semibold"></p>
+  </section>
+
+  <!-- Age in Days / Months -->
+  <section id="age-in-days" class="tool-section bg-white p-6 rounded shadow mb-8">
+    <h2 class="text-xl font-bold mb-2">Age in Days / Months</h2>
+    <input id="birthdate" type="date" class="border p-2 mr-2" />
+    <button onclick="calcAgeInDays()" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate</button>
+    <p id="days-result" class="mt-3 font-semibold"></p>
+  </section>
+
+  <!-- Tip Calculator -->
+  <section id="tip-calculator" class="tool-section bg-white p-6 rounded shadow mb-8">
+    <h2 class="text-xl font-bold mb-2">Tip Calculator</h2>
+    <input id="bill-amount" type="number" placeholder="Bill Amount" class="border p-2 mr-2" />
+    <input id="tip-percent" type="number" placeholder="Tip (%)" class="border p-2 mr-2" />
+    <button onclick="calcTip()" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate</button>
+    <p id="tip-result" class="mt-3 font-semibold"></p>
+  </section>
+
+  <!-- Date Difference Calculator -->
+  <section id="date-diff" class="tool-section bg-white p-6 rounded shadow mb-8">
+    <h2 class="text-xl font-bold mb-2">Date Difference Calculator</h2>
+    <input id="date1" type="date" class="border p-2 mr-2" />
+    <input id="date2" type="date" class="border p-2 mr-2" />
+    <button onclick="calcDateDiff()" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate</button>
+    <p id="date-diff-result" class="mt-3 font-semibold"></p>
+  </section>
+
+  <!-- 📚 Education & Study Helpers -->
+  <section id="education-tools" class="tool-section bg-white p-6 rounded shadow space-y-10">
+
+<!-- Tip Calculator -->
+  <section id="tip-calculator" class="tool-section bg-white p-6 rounded shadow mb-8">
+    <h2 class="text-xl font-bold mb-2">Tip Calculator</h2>
+    <input id="bill-amount" type="number" placeholder="Bill Amount" class="border p-2 mr-2" />
+    <input id="tip-percent" type="number" placeholder="Tip (%)" class="border p-2 mr-2" />
+    <button onclick="calcTip()" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate</button>
+    <p id="tip-result" class="mt-3 font-semibold"></p>
+  </section>
+
+  <!-- Date Difference Calculator -->
+  <section id="date-diff" class="tool-section bg-white p-6 rounded shadow mb-8">
+    <h2 class="text-xl font-bold mb-2">Date Difference Calculator</h2>
+    <input id="date1" type="date" class="border p-2 mr-2" />
+    <input id="date2" type="date" class="border p-2 mr-2" />
+    <button onclick="calcDateDiff()" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate</button>
+    <p id="date-diff-result" class="mt-3 font-semibold"></p>
+  </section>
+
+</main>
+
+  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-500">
+    © 2025 Lifeisez. All rights reserved.
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

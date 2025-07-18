@@ -1,0 +1,13 @@
+body {
+    font-family: sans-serif;
+    background: #f1f5f9;
+  }
+  
+  .tool-section {
+    display: none;
+  }
+  
+  .tool-section.active {
+    display: block;
+  }
+  
